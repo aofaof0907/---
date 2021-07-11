@@ -1,0 +1,12 @@
+.row-component {
+  display: flex;
+  flex-direction: row;
+
+  & > *:not(:last-child) {
+    margin-right: var(--spacer-2);
+  }
+
+  .button-component {
+    align-self: flex-end;
+  }
+}
