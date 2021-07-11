@@ -1,0 +1,34 @@
+.no-branches {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+
+  padding: var(--spacer-3);
+
+  .title {
+    font-weight: var(--font-weight-semibold);
+    text-align: center;
+  }
+
+  .subtitle {
+    margin-left: var(--spacer-4);
+    margin-right: var(--spacer-4);
+
+    text-align: center;
+    font-size: var(--font-size-sm);
+  }
+
+  .create-branch-button {
+    margin: var(--spacer-4);
+    align-self: stretch;
+  }
+
+  .protip {
+    padding-left: var(--spacer-5);
+    padding-right: var(--spacer-5);
+
+    text-align: center;
+    font-size: var(--font-size-sm);
+  }
+}

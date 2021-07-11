@@ -1,0 +1,67 @@
+@import '../mixins';
+
+#add-repository {
+  width: 350px;
+
+  .content {
+    margin: var(--spacer-4);
+  }
+}
+
+.clone-github-repo {
+  height: 250px;
+
+  &.filter-list .filter-field-row {
+    margin: var(--spacer-4);
+    margin-bottom: var(--spacer-3);
+  }
+
+  .clone-repository-list {
+    &-group-header {
+      font-weight: var(--font-weight-semibold);
+      padding: var(--spacer-3) var(--spacer-4);
+    }
+
+    &-item {
+      padding: 0 var(--spacer-4);
+
+      .name {
+        @include ellipsis;
+      }
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: row;
+      min-width: 0;
+      flex-grow: 1;
+      align-items: center;
+
+      .icon {
+        fill: var(--text-secondary-color);
+        margin-right: var(--spacer-2);
+        width: 16px; // Force a consistent width
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+
+.dialog-content {
+  &.clone-github-repository-content {
+    padding: 0;
+  }
+
+  &.clone-generic-repository-content {
+    padding: var(--spacer-4);
+  }
+}
+
+.clone-repository {
+  width: 500px;
+
+  .local-path-field {
+    border-top: var(--base-border);
+    padding: var(--spacer-4);
+  }
+}

@@ -1,0 +1,17 @@
+.form-component {
+  display: flex;
+  flex-direction: column;
+
+  margin: var(--spacer-2) 0;
+
+  & > *:not(:last-child) {
+    margin-bottom: var(--spacer-3);
+  }
+
+  hr {
+    width: 100%;
+    border: none;
+    height: 1px;
+    border-bottom: var(--base-border);
+  }
+}
