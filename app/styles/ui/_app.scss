@@ -1,0 +1,68 @@
+@import '../mixins';
+
+#desktop-app {
+  // This is just a dummy wrapper needed because react doesn't like
+  // being installed into <body>, see https://github.com/facebook/react/issues/3207
+  &-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  // The main react component div
+  &-chrome {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  // main non-window chrome wrapper
+  &-contents {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    height: 100%;
+    min-height: 0;
+  }
+}
+
+#desktop-app-contents {
+  &.cherry-pick-mouse-over {
+    :not(input):not(textarea),
+    :not(input):not(textarea)::after,
+    :not(input):not(textarea)::before {
+      cursor: not-allowed;
+    }
+
+    #desktop-app-toolbar {
+      .toolbar-dropdown {
+        &.branch-button {
+          :not(input):not(textarea),
+          :not(input):not(textarea)::after,
+          :not(input):not(textarea)::before {
+            cursor: default;
+          }
+
+          .branches-list-item:hover {
+            --text-color: var(--box-selected-active-text-color);
+            --text-secondary-color: var(--box-selected-active-text-color);
+
+            color: var(--text-color);
+            background-color: var(--box-selected-active-background-color);
+            cursor: copy;
+          }
+        }
+      }
+    }
+
+    #commit-list {
+      :not(input):not(textarea),
+      :not(input):not(textarea)::after,
+      :not(input):not(textarea)::before {
+        cursor: default;
+      }
+    }
+  }
+}
