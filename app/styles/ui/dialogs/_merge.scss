@@ -1,0 +1,115 @@
+@import '../../mixins';
+
+dialog#merge {
+  width: 450px;
+
+  .branches-list {
+    height: 300px;
+  }
+
+  // We're faking it so that the filter text box appears to reside
+  // withing the header even though our current component structure
+  // make it extremely hard to do so.
+  .dialog-header {
+    border-bottom: none;
+
+    h1 {
+      font-weight: var(--font-weight-light);
+    }
+  }
+
+  .dialog-content {
+    padding: 0;
+
+    .filter-field-row {
+      margin: 0;
+      border-bottom: var(--base-border);
+
+      .filter-list-filter-field {
+        padding: 0 var(--spacing-double);
+        padding-bottom: var(--spacing);
+      }
+    }
+
+    .list-item {
+      padding: 0 var(--spacing-double);
+
+      .filter-list-group-header,
+      .branches-list-item {
+        padding: 0;
+      }
+    }
+  }
+
+  .dialog-footer {
+    button[type='submit'] {
+      height: 30px;
+      padding: var(--spacing-half);
+    }
+
+    .split-button {
+      button[type='submit'] {
+        width: 88%;
+        display: inline;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        margin-right: 0;
+        float: left;
+      }
+
+      .dropdown-button {
+        width: 10%;
+        padding: var(--spacing-half);
+        margin: 0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        min-width: auto;
+        height: 30px;
+        background-color: var(--button-background);
+        color: var(--button-text-color);
+        border: 1px solid var(--button-background);
+      }
+
+      .split-button-options {
+        position: absolute;
+        width: 90%;
+        margin-top: var(--spacing-half);
+        margin-bottom: var(--spacing-double);
+        overflow: hidden;
+        font-size: var(--font-size);
+        color: var(--text-color);
+        background-color: var(--box-alt-background-color);
+        background-clip: padding-box;
+        border: 1px solid var(--box-border-color);
+        border-radius: var(--border-radius);
+        z-index: 99;
+
+        ul {
+          padding: 0;
+          margin: 0;
+
+          li {
+            list-style-type: none;
+            padding: var(--spacing) var(--spacing-double);
+            padding-left: var(--spacing-triple);
+            border-bottom: 1px solid var(--box-border-color);
+
+            .option-description {
+              color: var(--text-secondary-color);
+              font-size: var(--font-size-sm);
+            }
+
+            .selected-option-indicator {
+              position: absolute;
+              left: var(--spacing);
+            }
+          }
+
+          li:hover {
+            background-color: var(--box-selected-background-color);
+          }
+        }
+      }
+    }
+  }
+}
